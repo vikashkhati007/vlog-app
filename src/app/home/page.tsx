@@ -1,11 +1,10 @@
 // pages/index.js
-"use client"
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 async function Main(){
-      const post = await fetch("/api/users", { next: { revalidate: 5 }});
+      const post = await fetch("http://localhost:3000/api/users", { next: { revalidate: 5 }});
       const posts = await post.json();
 
   return (
