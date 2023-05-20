@@ -1,18 +1,31 @@
+"use client"
 // pages/index.js
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import {useEffect, useState} from "react";
 
-async function Main(){
-      const post = await fetch(`${process.env.HOSTNAME}/api/users`, { next: { revalidate: 5 }});
+const Main = () => {
+  const [data,setdata] = useState([]);
+
+  useEffect(()=>{
+    async function getPost(){
+      const post = await fetch(`/api/users`, { next: { revalidate: 5 }});
       const posts = await post.json();
+      if(post.ok){
+        setdata(posts);
+      }
+    }
+    getPost();
+  },[])
+
 
   return (
     <>
       <main className={styles.maincontainer}>
       <h1 className="blogtitle">Latest Posts :: </h1>
         <div className={styles.blogcontainer}>
-          {posts.map((user: any, key: any) => {
+          {data.map((user: any, key: any) => {
             return (
               <Link key={key} href={`/posts?postID=${user._id}`}>
                 <div className={styles.blogpost}>
