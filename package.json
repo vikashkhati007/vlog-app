@@ -15,18 +15,12 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
-<<<<<<< HEAD
     "mongoose": "^7.1.1",
-=======
->>>>>>> 05ffb27 (Initial commit from Create Next App)
     "next": "13.4.2",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-<<<<<<< HEAD
     "react-loading-skeleton": "^3.3.1",
-=======
->>>>>>> 05ffb27 (Initial commit from Create Next App)
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
   }
