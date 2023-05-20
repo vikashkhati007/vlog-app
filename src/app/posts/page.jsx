@@ -4,7 +4,7 @@ import styles from "../styles/post/pages.module.css";
 import Loading from "../components/loading";
 import { useEffect, useState } from "react";
 
-async function Pages(e) {
+const Pages = (e) => {
   const [data,setdata] = useState([]);
   const [loading, setloading] = useState(true);
 
@@ -18,7 +18,7 @@ async function Pages(e) {
       }
     }
     getPost();
-  },[])
+  },[e.searchParams.postID])
 
   return (
     <>

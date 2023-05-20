@@ -1,24 +1,33 @@
+"use client"
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Loading from "../components/loading";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
+const Search = (e:any) => {
+  const [data,setdata] = useState([]);
+  const [loading, setloading] = useState(true);
 
-async function Search (e:any) {
-      let loading = true;
-      const post = await fetch(`${process.env.HOSTNAME}/api/users?title=${e.searchParams.title}`);
+  useEffect(() => {
+    async function getPost() {
+      const post = await fetch(`/api/users?title=${e.searchParams.title}`);
       const posts = await post.json();
       if(post.ok){
-        loading = false;
+        setdata(posts);
+        setloading(false);
       }
+    }
+    getPost();
+  },[e.searchParams.title])
 
   return (
     <>
       <main className={styles.maincontainer}>
       {loading ? <Loading/>: <>
-        {posts.length == 0 ? <h1> Not Found !!</h1> : <h1> Searched Posts :: </h1>}
+        {data.length == 0 ? <h1> Not Found !!</h1> : <h1> Searched Posts :: </h1>}
         <div className={styles.blogcontainer}>
-          {posts.map((user : any, key: any) => {
+          {data.map((user : any, key: any) => {
             return (
               <Link key={user._id} href={`/posts?postID=${user._id}`}>
               <div className={styles.blogpost} >

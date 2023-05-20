@@ -3,10 +3,12 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Loading from "../components/loading";
 import {useEffect, useState} from "react";
 
 const Main = () => {
   const [data,setdata] = useState([]);
+  const [loading, setloading] = useState(true);
 
   useEffect(()=>{
     async function getPost(){
@@ -14,6 +16,7 @@ const Main = () => {
       const posts = await post.json();
       if(post.ok){
         setdata(posts);
+        setloading(false);
       }
     }
     getPost();
@@ -23,7 +26,7 @@ const Main = () => {
   return (
     <>
       <main className={styles.maincontainer}>
-      <h1 className="blogtitle">Latest Posts :: </h1>
+      {loading ? <Loading /> : <><h1 className="blogtitle">Latest Posts :: </h1>
         <div className={styles.blogcontainer}>
           {data.map((user: any, key: any) => {
             return (
@@ -45,6 +48,7 @@ const Main = () => {
             );
           }).reverse()}
         </div>
+         </>}
       </main>
     </>
   );
