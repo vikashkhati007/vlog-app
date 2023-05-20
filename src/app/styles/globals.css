@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: max-content;
+    background-color: #fffcfc;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}

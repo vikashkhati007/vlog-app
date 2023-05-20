@@ -1,0 +1,229 @@
+  @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+  .header{
+    width: 100%;
+    height: 11vh;
+}
+
+
+.nav{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
+    border: 1px solid rgba(255,255,255,0.4);
+    position: fixed;
+    z-index: 5;
+    background-color: #fffcfc;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.menuicon{
+    cursor: pointer;
+}
+.nav h1{
+    font-family: 'Urbanist', sans-serif;
+}
+.input{
+    width: 200px;
+    height: 35px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 2px rgba(255,255,255,0.4);
+    padding-left: 10px;
+}
+
+.inputContainer {
+    position: relative;
+  }
+  
+  .inputContainer .input {
+    padding-right: 30px; /* Add padding to the right to make space for the icon */
+    width: 35vw;
+  }
+  
+  .inputContainer .searchIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  /* toogle Button */
+/* 
+
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+  }
+  
+  .sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+  
+   .switch:hover .sun svg {
+    animation: rotate 15s linear infinite;
+  }
+  
+  @keyframes rotate {
+   
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+   .switch:hover .moon svg {
+    animation: tilt 5s linear infinite;
+  }
+  
+  @keyframes tilt {
+   
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    25% {
+      transform: rotate(-10deg);
+    }
+  
+    75% {
+      transform: rotate(10deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .input:checked + .slider {
+    background-color: #183153;
+  }
+  
+  .input:focus + .slider {
+    box-shadow: 0 0 1px #183153;
+  }
+  
+  .input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+  */
+
+.menuitems{
+    width: 200px;
+    height: 465px;
+    backdrop-filter: blur(10.4px);
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
+    background-image: linear-gradient(45deg, rgba(255,255,255,1), rgba(255,255,255,0.8));
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    font-family: 'ABeeZee', sans-serif;
+    margin: 2.3px 0px;
+    border: 1px solid rgba(255,255,255,0.4);
+    position: fixed;
+    z-index: 1;
+    margin-top: 68px;
+    
+}
+
+.menuitems .home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0 0 0 / 10%);
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(0 0 0 / 10%);
+}
+
+.menuitems .about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0 0 0 / 10%);
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(0 0 0 / 10%);
+
+
+}
+.menuitems .contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0 0 0 / 10%);
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(0 0 0 / 10%);
+
+}

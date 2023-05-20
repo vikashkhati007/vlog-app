@@ -1,0 +1,35 @@
+  @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+.footer {
+    width: 100%;
+    height: 11vh;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
+
+.footcontainer {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 -12px 10px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
+    border: 1px solid rgba(255,255,255,0.4);
+    background-color: #fffcfc;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+   
+}
+.footcontainer p {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.footcontainer .iconcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}

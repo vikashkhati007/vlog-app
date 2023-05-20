@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+.contactform {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    border: 2px solid black;
+    margin: 20px auto;
+    font-family: 'Gabriela', serif;
+    background-color: #f1eded;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ 
+}
+  
+  .contactform label {
+    color: black;
+  }
+  
+  .contactform .heading {
+    font-size: 1.8rem;
+    color: black;
+    margin-bottom: 12px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+  }
+  
+  .contactform form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contactform label {
+    margin-bottom: 10px;
+  }
+  
+  .textarea {
+    resize: none;
+    font-family: 'Gabriela', serif;
+
+  }
+  
+  .contactform input, .contactform textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .contactform input:focus, .contactform textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff6384;
+    transition: transform 0.3s ease-in-out;
+  }
+
+.button[type="submit"] {
+  width: 40%;
+  margin: 0 auto;
+    background-image: linear-gradient(to bottom, #ff6384, #f1869d);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+.button[type="submit"]:hover {
+    transition: transform 0.3s ease-in-out;
+    background-image: linear-gradient(to top, #ff6384, #f1869d);
+
+  }
+  
