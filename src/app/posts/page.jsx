@@ -1,11 +1,10 @@
-"use client";
 import Image from "next/image";
 import styles from "../styles/post/pages.module.css";
 import Loading from "../components/loading";
 
 async function Pages (e) {
       let loading = true;
-      const post = await fetch(`/api/users?postID=${e.searchParams.postID}`);
+      const post = await fetch(`${process.env.HOSTNAME}/api/users?postID=${e.searchParams.postID}`);
       const posts = await post.json();
       if(post.ok){
         loading = false;

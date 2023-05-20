@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function Main(){
-      const post = await fetch("http://localhost:3000/api/users", { next: { revalidate: 5 }});
+      const post = await fetch(`${process.env.HOSTNAME}/api/users`, { next: { revalidate: 5 }});
       const posts = await post.json();
 
   return (

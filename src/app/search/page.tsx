@@ -1,14 +1,12 @@
-"use client"
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Loading from "../components/loading";
+import Link from "next/link";
 
 
 async function Search (e:any) {
       let loading = true;
-      const router = useRouter();
-      const post = await fetch(`/api/users?title=${e.searchParams.title}`);
+      const post = await fetch(`${process.env.HOSTNAME}/api/users?title=${e.searchParams.title}`);
       const posts = await post.json();
       if(post.ok){
         loading = false;
@@ -22,13 +20,15 @@ async function Search (e:any) {
         <div className={styles.blogcontainer}>
           {posts.map((user : any, key: any) => {
             return (
-              <div key={user.id} className={styles.blogpost} onClick={()=>{router.push(`/posts?postID=${user._id}`)}}>
+              <Link key={user._id} href={`/posts?postID=${user._id}`}>
+              <div className={styles.blogpost} >
                 <Image className={styles.image} src={user.avtar} width={500} height={500} alt="hacker" />
                 <div className={styles.blogtext}>
                 <h3>{user.title.substring(0,20)}</h3>
                 <p> {user.description.substring(0,150)+"...?"}</p>
                 </div>
               </div>
+              </Link>
             );
           })}
         </div>
