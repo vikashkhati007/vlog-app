@@ -4,14 +4,14 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Loading from "../components/loading";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const Main = () => {
   const [data,setdata] = useState([]);
   const [loading, setloading] = useState(true);
+  getPosts();
 
-  useEffect(()=>{
-    async function getPost(){
+    async function getPosts(){
       const post = await fetch(`/api/users`, { next: { revalidate: 5 }});
       const posts = await post.json();
       if(post.ok){
@@ -19,8 +19,6 @@ const Main = () => {
         setloading(false);
       }
     }
-    getPost();
-  },[])
 
 
   return (

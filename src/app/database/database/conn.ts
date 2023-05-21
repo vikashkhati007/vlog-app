@@ -1,19 +1,8 @@
 const MONGO_URl:any = process.env.MONGODB_URL;
 import mongoose from "mongoose";
 
-const connectMongo = async () => {
-    try {
-        const { connection } = await mongoose.connect(MONGO_URl);
-
-        if (connection.readyState == 1) {
-            //databasecheck
-        }
-
-    }
-    catch (errors) {
-        return Promise.reject(errors);
-    }
-
-}  
+async function connectMongo(){
+   return await mongoose.connect(MONGO_URl);
+} 
 
 export default connectMongo;
